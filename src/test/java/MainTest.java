@@ -1,25 +1,28 @@
-import static org.junit.Assert.*;
 import org.junit.Test;
+
+import static org.junit.Assert.assertTrue;
+
 public class MainTest{
     @Test
-    public void test()
+    public void testVasya()
     {
-        boolean check = true;
-       int[] testcases = {-100, 2, 30, 45, 102, 204,1};
-       for(int i = 0; i < testcases.length; i++)
-       {
-           Main  c = new Main();
-           if((c.waterMelon(testcases[i]) == true)) //&& (testcases[i]  < 1 || testcases[i] > 100) );
-           {
-               if(testcases[i]  < 1 || testcases[i] > 100)//&& (testcases[i]  < 1 || testcases[i] > 100) );
-               {
-                   check = false;
-                   break;
-               }
-           }
+        int nNum[] = {-1, 0, 1, 2, 3};
+        int[][] ind = {{1,2,3}, {-1,-2,-3}, {0,0,0},{-300, 400, 0}};
+        boolean test = true;
+        for(int i = 0; i < nNum.length; i++)
+        {
+            Main m = new Main();
 
-
-       }
-        assertTrue(check);
+            if(m.vasya(nNum[i],ind) == true && (nNum[i] < 1 || nNum[i] > 100))
+            {
+                if(ind[i][0] > -100 || ind[i][0] > 100 || ind[i][1] > -100 || ind[i][1] > 100 || ind[i][2] > -100 || ind[i][2] > 100 )
+                   test = false;
+            }
+        }
+        assertTrue(test);
     }
+
+
+
+
 }
